@@ -35,6 +35,9 @@ bower.json
 # Ignore pow environment settings
 .powenv
 
+# Ignore Spring files.
+/spring/*.pid
+
 ### OSX ###
 .DS_Store
 .AppleDouble
