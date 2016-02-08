@@ -25,7 +25,7 @@ guard :minitest, spring: true, all_on_start: false do
   watch(%r{^test/test_helper\.rb$})      { 'test' }
 
   # Routes
-  watch('config/routes.rb')    { integration_tests }
+  watch('config/routes.rb')    { 'test' }
 
   # Self-explanetory
   watch(%r{^app/models/(.*?)\.rb$}) do |matches|
