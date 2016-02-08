@@ -23,6 +23,7 @@ guard :minitest, spring: true, all_on_start: false do
 
   # test_helper.rb
   watch(%r{^test/test_helper\.rb$})      { 'test' }
+
   # Routes
   watch('config/routes.rb')    { integration_tests }
 
@@ -41,7 +42,8 @@ guard :minitest, spring: true, all_on_start: false do
     integration_tests(matches[1])
   end
   watch('app/views/layouts/application.html.erb') do
-    'test/integration/site_layout_test.rb'
+    ['test/integration/site_layout_test.rb',
+    'test/controllers/static_pages_controller_test.rb']
   end
   watch('app/helpers/sessions_helper.rb') do
     integration_tests << 'test/helpers/sessions_helper_test.rb'
